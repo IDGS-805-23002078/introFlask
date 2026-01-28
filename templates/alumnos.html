@@ -1,0 +1,38 @@
+ALUMNOS
+{% extends "layout.html" %}
+ 
+{% block content %}
+ 
+{%import "_macros.html" as macros%}
+
+    <h1 class="mt-4">Alumnos</h1>
+
+    <form action="" method="post">
+
+        <div class="mb-3">
+        {{macros.campoNuevo(form.matricula,class='form-control')}}
+            </div>
+         <div class="mb-3">
+        {{macros.campoNuevo(form.matricula,class='form-control')}}
+            </div>
+         <div class="mb-3">
+        {{macros.campoNuevo(form.matricula,class='form-control')}}
+            </div>
+         <div class="mb-3">
+        {{macros.campoNuevo(form.matricula,class='form-control')}}
+            </div>
+         <div class="mb-3">
+        {{macros.campoNuevo(form.correo,class='form-control')}}
+            </div>
+
+            <button class="btn btn-primary" type="submit">Guardar</button>
+
+    </form>
+
+    <h1>Matricuka  {{mat}}</h1> 
+    <h1>nombre  {{nom}}</h1> 
+    <h1>Apaterno:  {{mat}}</h1> 
+    <h1>Amaterno:  {{mat}}</h1> 
+    <h1>Correo  {{mat}}</h1> 
+
+{% endblock %}

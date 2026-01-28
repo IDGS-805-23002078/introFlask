@@ -43,11 +43,30 @@
 </nav>
  
 <div class="container mt-5 pt-4">
+
+  {% with messages=get_flashed_messages()%}
+
+    {% if messages %}
+
+    {% for message in messages%}
+
+    <div class="alert alert_success">
+      {{message}}
+    </div>
+
+    {%endfor%}
+
+    {%endif%}
+
+
+  {%endwith}
+
     {% block content %}
     {% endblock %}
 </div>
  
 <!-- Bootstrap JS -->
-<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}">
+ </script>
 </body>
 </html>
