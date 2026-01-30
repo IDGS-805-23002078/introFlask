@@ -1,38 +1,47 @@
-ALUMNOS
 {% extends "layout.html" %}
- 
+
 {% block content %}
- 
+
+
 {%import "_macros.html" as macros%}
 
-    <h1 class="mt-4">Alumnos</h1>
+<h1>Alumnos</h1>
 
-    <form action="" method="post">
+<form action="" method="post">
 
-        <div class="mb-3">
-        {{macros.campoNuevo(form.matricula,class='form-control')}}
-            </div>
-         <div class="mb-3">
-        {{macros.campoNuevo(form.matricula,class='form-control')}}
-            </div>
-         <div class="mb-3">
-        {{macros.campoNuevo(form.matricula,class='form-control')}}
-            </div>
-         <div class="mb-3">
-        {{macros.campoNuevo(form.matricula,class='form-control')}}
-            </div>
-         <div class="mb-3">
-        {{macros.campoNuevo(form.correo,class='form-control')}}
-            </div>
+    {{form.csrf_token}}
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
 
-            <button class="btn btn-primary" type="submit">Guardar</button>
+   <div class="mb-3">
+        {{macros.campoNuevo(form.matricula,class='form-control')}}
+    </div>
+
+    <div class="mb-3">
+        {{macros.campoNuevo(form.nombre, class='form-control')}}
+    </div>
+
+    <div class="mb-3">
+        {{macros.campoNuevo(form.apaterno, class='form-control')}}
+    </div>
+
+    <div class="mb-3">
+        {{macros.campoNuevo(form.amaterno, class='form-control')}}
+    </div>
+
+    <div class="mb-3">
+        {{macros.campoNuevo(form.correo, class='form-control')}}
+    </div>
+
+    <button class="btn btn-primary" type="submit">Guardar</button>
+
+
+
+        <h1>Matricula: {{mat}}</h1>
+        <h1>Nombre: {{nom}}</h1>
+        <h1>Apaterno: {{apa}}</h1>
+        <h1>Amaterno: {{ama}}</h1>
+        <h1>Correo: {{email}}</h1>
 
     </form>
 
-    <h1>Matricuka  {{mat}}</h1> 
-    <h1>nombre  {{nom}}</h1> 
-    <h1>Apaterno:  {{mat}}</h1> 
-    <h1>Amaterno:  {{mat}}</h1> 
-    <h1>Correo  {{mat}}</h1> 
-
-{% endblock %}
+{%endblock%}
